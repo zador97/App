@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Create task
+{% endblock %}
+
+{% block main %}
+<h2 xmlns="http://www.w3.org/1999/html">Create task</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}</br>
+        {{ form.text }}</br>
+        <button type="submit" class="btn btn-success">Create</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
