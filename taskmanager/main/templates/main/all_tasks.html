@@ -9,6 +9,7 @@
     {% if tasks %}
         {% for el in tasks %}
             <div class="alert alert-warning mt-2">
+                <a class="float-right" href="delete/{{ el.id }}">Удалить</a>
                 <h4>{{ el.title }}</h4>
                 <p>{{ el.text }}</p>
             </div>

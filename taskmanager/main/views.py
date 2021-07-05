@@ -38,3 +38,17 @@ def all_tasks(request):
     }
 
     return render(request, 'main/all_tasks.html', context)
+
+
+# удаление данных из бд
+def delete(request, id):
+    try:
+        person = Task.objects.get(id=id)
+        person.delete()
+        return redirect('all_tasks')
+    except Task.DoesNotExist:
+        return redirect('error_404')
+
+
+def error_404(request):
+    return render(request, 'main/error_404.html')
