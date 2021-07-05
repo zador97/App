@@ -29,3 +29,12 @@ def create(request):
         'error': error
     }
     return render(request, 'main/create.html', context)
+
+
+def all_tasks(request):
+    context = {
+        'title': 'Tasks list',
+        'tasks': Task.objects.order_by('title')
+    }
+
+    return render(request, 'main/all_tasks.html', context)
